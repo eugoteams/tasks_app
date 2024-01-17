@@ -10,9 +10,11 @@ import React, {
 } from "react";
 import style from "./Search.module.css";
 import { AppContext } from "../../Store/AppContext";
+import useStorage from "../../hooks/useStorage";
 
 const Search = (props) => {
   const { tasksObject, dispatch } = useContext(AppContext);
+  const { getTasks } = useStorage();
   let tasks = tasksObject["tasks"];
   const [searchText, setSearchText] = useState("");
   let debouncingRef = useRef();
@@ -28,7 +30,8 @@ const Search = (props) => {
         let filteredTask = tasks.filter(
           (task, index) => task["task title"] === searchText
         );
-        console.log("Search", filteredTask);
+        console.log("Search", filteredTask, getTasks());
+
         tasksObject["searchText"] = searchText;
         dispatch({ type: "ADD", payload: { ...tasksObject } });
       }

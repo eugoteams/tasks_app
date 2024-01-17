@@ -15,7 +15,7 @@ function App() {
 
   return (
     <Fragment>
-      <Search />
+      {/* <Search /> */}
       <Header />
       <DisplayTask />
       {openPopUp && <AddForm />}

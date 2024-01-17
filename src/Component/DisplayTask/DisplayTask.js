@@ -4,6 +4,7 @@ import React, { Fragment, useContext } from "react";
 import style from "./DisplayTask.module.css";
 import Card from "../Card/Card";
 import { AppContext } from "../../Store/AppContext";
+import { PlusSquare } from "lucide-react";
 
 const DisplayTask = (props) => {
   const { tasksObject, dispatch } = useContext(AppContext);
@@ -36,25 +37,36 @@ const DisplayTask = (props) => {
     console.log("Status Select Listener", action, indexRecv);
   };
 
+  console.log(tasks.length);
+
   return (
     <Fragment>
       <div className={`${style.grid} ${style[`${layout}`]}`}>
-        {tasks.map((task, index) => {
-          return (
-            <Card
-              key={`tasks_${index}`}
-              id={index}
-              title={task["task title"]}
-              dueDate={task["due date"]}
-              description={task["description"]}
-              important={task["important"]}
-              status={task["status"]}
-              onActionSelect={onActionSelectListener}
-              onStatusSelect={onStatusSelectListener}
-              layout={layout}
-            />
-          );
-        })}
+        {tasks.length > 0 ? (
+          tasks.map((task, index) => {
+            return (
+              <Card
+                key={`tasks_${index}`}
+                id={index}
+                title={task["task title"]}
+                dueDate={task["due date"]}
+                description={task["description"]}
+                important={task["important"]}
+                status={task["status"]}
+                onActionSelect={onActionSelectListener}
+                onStatusSelect={onStatusSelectListener}
+                layout={layout}
+              />
+            );
+          })
+        ) : (
+          <div className={`${style.message}`}>
+            <div className={`${style.inner_message}`}>
+              <PlusSquare size={24} absoluteStrokeWidth />
+              <span>Your tasks are empty</span>
+            </div>
+          </div>
+        )}
       </div>
     </Fragment>
   );
