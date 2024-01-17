@@ -1,0 +1,19 @@
+/** @format */
+
+.container {
+  margin: 3rem auto;
+  transition: all 0.5s ease;
+}
+
+.container > input {
+  display: block;
+  width: 35rem;
+  padding: 1.3rem;
+  border-radius: 5rem;
+  margin: 3rem auto;
+}
+
+.container > input:focus {
+  border-color: #4263eb;
+  transition: all 0.5s ease;
+}

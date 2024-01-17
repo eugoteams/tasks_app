@@ -1,0 +1,50 @@
+/** @format */
+
+.card_cols {
+  width: 25rem;
+  height: 18rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  text-transform: capitalize;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  margin: 2rem auto;
+  background-color: #f8f9fa;
+}
+
+.inprogress {
+  background-color: #bac8ff;
+}
+
+.done {
+  background-color: #b2f2bb;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.date {
+  color: #495057;
+  font-size: 1.1rem;
+}
+
+.card_body {
+  /* border: 1px solid rebeccapurple; */
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.card_rows {
+  /* border: 1px solid red; */
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem auto;
+  text-transform: capitalize;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}

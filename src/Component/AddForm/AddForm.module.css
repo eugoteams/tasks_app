@@ -1,0 +1,35 @@
+/** @format */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 35rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 0.6rem;
+  background-color: #f1f3f5;
+}
+
+.formHeader {
+  margin: 1rem auto;
+  width: 100%;
+  cursor: pointer;
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.button {
+  background-color: #91a7ff;
+  text-transform: capitalize;
+  padding: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 2rem;
+  width: 10rem;
+  margin: 2rem auto;
+}

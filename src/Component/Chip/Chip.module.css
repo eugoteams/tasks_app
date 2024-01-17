@@ -1,0 +1,11 @@
+/** @format */
+
+.container {
+  border-radius: 2rem;
+  background-color: #4c6ef5;
+  color: #fffffe;
+  padding: 0.5rem;
+  width: 13rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}

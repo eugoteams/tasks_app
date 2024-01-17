@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
+
+import { Fragment, useContext } from "react";
+import AddForm from "./Component/AddForm/AddForm";
+import Header from "./Component/Header/Header";
+import DisplayTask from "./Component/DisplayTask/DisplayTask";
+import { AppContext } from "./Store/AppContext";
+import Search from "./Component/Search/Search";
 
 function App() {
+  const { tasksObject, dispatch } = useContext(AppContext);
+  let openPopUp = tasksObject["openPopUp"];
+  let searchText = tasksObject["searchText"];
+  console.log("App Search Text", searchText);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Search />
+      <Header />
+      <DisplayTask />
+      {openPopUp && <AddForm />}
+    </Fragment>
   );
 }
 

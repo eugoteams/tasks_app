@@ -1,0 +1,31 @@
+/** @format */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.container_inline {
+  /* border: 1px solid rebeccapurple; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+  width: 15rem;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+
+.input {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  text-transform: capitalize;
+  border-radius: 0.5rem;
+  outline: none;
+}
