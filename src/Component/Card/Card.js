@@ -55,4 +55,4 @@ const Card = ({
   );
 };
 
-export default memo(Card);
+export default Card;

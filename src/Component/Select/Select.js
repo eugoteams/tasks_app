@@ -4,7 +4,8 @@ import React, { Fragment, memo, useState, useCallback, useEffect } from "react";
 import style from "./Select.module.css";
 import { ChevronDown } from "lucide-react";
 
-const Select = ({ onSelect, status = "todo" }) => {
+const Select = ({ onSelect, status }) => {
+  console.log("Inside Select", status);
   const [dropDown, setDropDown] = useState(false);
   const [action, setAction] = useState(status);
 
@@ -15,7 +16,6 @@ const Select = ({ onSelect, status = "todo" }) => {
 
   const onDropDownItemSelectListener = useCallback((e) => {
     let valueSelected = e.target.getAttribute("name");
-    console.log(valueSelected);
     setAction((prevState) => valueSelected);
     onDotMenuClickedListener();
   }, []);
@@ -52,4 +52,4 @@ const Select = ({ onSelect, status = "todo" }) => {
   );
 };
 
-export default memo(Select);
+export default Select;

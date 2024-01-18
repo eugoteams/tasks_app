@@ -27,7 +27,7 @@ const DisplayTask = (props) => {
     console.log("Action Payload reacv", action, indexRecv);
     switch (true) {
       case action === "delete":
-        let filteredTask = tasks.filter((tasks, index) => index !== indexRecv);
+        let filteredTask = tasks.filter((task, index) => index !== indexRecv);
         tasksObject["tasks"] = filteredTask;
         console.log(filteredTask);
         break;
@@ -48,8 +48,6 @@ const DisplayTask = (props) => {
     console.log("Status Select Listener", action, indexRecv);
   };
 
-  console.log(tasks.length);
-
   return (
     <Fragment>
       {tasks.length > 0 ? (
@@ -57,7 +55,7 @@ const DisplayTask = (props) => {
           {tasks.map((task, index) => {
             return (
               <Card
-                key={`tasks_${index}`}
+                key={`tasks_${task["id"]}`}
                 id={index}
                 title={task["task title"]}
                 dueDate={task["due date"]}

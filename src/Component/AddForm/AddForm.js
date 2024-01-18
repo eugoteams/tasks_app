@@ -7,6 +7,7 @@ import Modal from "../Modal/Modal";
 import { AppContext } from "../../Store/AppContext";
 import Flex from "../UI/Flex";
 import { X } from "lucide-react";
+import { v4 as uuidv4 } from "uuid";
 
 const AddForm = (props) => {
   const { tasksObject, dispatch } = useContext(AppContext);
@@ -18,6 +19,7 @@ const AddForm = (props) => {
     editTask !== null
       ? tasks[editTask]
       : {
+          id: uuidv4(),
           "task title": "",
           "due date": "",
           description: "",
